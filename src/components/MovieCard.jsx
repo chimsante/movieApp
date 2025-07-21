@@ -2,8 +2,11 @@ import React from "react";
 
 const MovieCard = ({movie}) =>{
     const {title, vote_average, poster_path, release_date, original_language, id} = movie;
+    
+    
+    
     return(
-        <div className="movie-card">
+        <div className="movie-card" onClick={() => window.open(`https://111movies.com/movie/${id}`, '_blank')} style={{ cursor: 'pointer' }}>
             <img src={poster_path ? `https://image.tmdb.org/t/p/w500/${poster_path}`:'/no-movie.png'}
                  alt={title}  />
             <div className="mt-4">
